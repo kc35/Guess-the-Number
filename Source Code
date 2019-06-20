@@ -1,0 +1,43 @@
+import math
+import random
+import sys
+import os
+
+
+N = random.randint(0, 21)
+print('I am thinking of a number between 1 and 20')
+print('Guess The Number')
+m = int(input())
+l = N - 1
+s = N + 1
+c = 0
+for i in range(0, 100, 1):
+
+  if(m < N):
+      if(m == l):
+          print('You are very close')
+          c = c + 1
+          m = int(input())
+          continue
+      else:
+          print('Your guess is too low')
+          c = c + 1
+          m = int(input())
+          continue
+  elif(m > N):
+      if(m == s):
+          print('You are very close')
+          c = c + 1
+          m = int(input())
+          continue
+      else:
+          print('Your guess is too high')
+          c = c + 1
+          m = int(input())
+          continue
+  elif(m == N):
+    print('You guessed it Right')
+    c = c + 1
+    break
+print(c)
+print('Good Job! You guessed it right It took you ' + str(c) + ' guesses.')
